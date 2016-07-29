@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dzg.mapper.FanMapper">
+
+    <!-- type为实体类Fan，包名已经配置，可以直接写类名 -->
+    <resultMap id="fanMap" type="com.dzg.entity.Fan">
+        <id property="id" column="id" />
+        <result property="nickname" column="nickname" />
+        <result property="city" column="city" />
+        <result property="sex" column="sex" />
+        <result property="province" column="province" />
+    </resultMap>
+
+<!--     <select id="getById" resultMap="fanMap" resultType="com.dzg.entity.Fan">
+        SELECT *
+        FROM weixin_fan
+        WHERE id = #{id}
+    </select> -->
+
+    <select id="getFans" resultMap="fanMap" parameterType="string" resultType="list">
+        SELECT *
+        FROM weixin_fan
+    </select>
+
+    <select id="getNameById" resultType="string">
+        SELECT nickname
+        FROM weixin_fan
+        WHERE id = #{id}
+    </select>
+
+
+</mapper>
