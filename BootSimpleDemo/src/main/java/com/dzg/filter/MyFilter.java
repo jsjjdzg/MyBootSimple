@@ -34,6 +34,7 @@ public class MyFilter implements Filter{
 			throws IOException, ServletException {
 		// TODO Auto-generated method stub
 		System.out.println("过滤器开始过滤");
+		arg2.doFilter(arg0, arg1);//进行过滤操作
 	}
 
 	@Override
