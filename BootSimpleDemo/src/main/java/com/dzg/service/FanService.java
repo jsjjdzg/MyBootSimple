@@ -32,7 +32,6 @@ public class FanService {
 			public Fan mapRow(ResultSet rs, int rowNum) throws SQLException {
 				Fan fan = new Fan();
 				fan.setId(rs.getString("id"));
-				fan.setNickname(rs.getString("nickname"));
 				fan.setSex(rs.getString("sex"));
 				fan.setCity(rs.getString("city"));
 				fan.setProvince(rs.getString("province"));
