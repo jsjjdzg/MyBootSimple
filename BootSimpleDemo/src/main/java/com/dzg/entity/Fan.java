@@ -62,6 +62,13 @@ public class Fan extends GenericEntity implements Serializable{
 	public void setProvince(String province) {
 		this.province = province;
 	}
+	
+	public Date getSubscribeTime() {
+		return subscribeTime;
+	}
+	public void setSubscribeTime(Date subscribeTime) {
+		this.subscribeTime = subscribeTime;
+	}
 	@Override
 	public String toString() {
 		return "Fan [id=" + id + ", city=" + city + ", sex=" + sex + ", province=" + province

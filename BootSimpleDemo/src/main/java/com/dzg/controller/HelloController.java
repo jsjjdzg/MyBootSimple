@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.dzg.mapper.FanMapper;
 import com.dzg.entity.Fan;
+import com.dzg.java18study.Fan18Service;
+import com.dzg.java18study.FanCityAndSexPredicate;
 import com.dzg.rabblitMQ.ReceiverService;
 import com.dzg.service.FanService;
 import com.dzg.service.HelloService;
@@ -33,6 +35,9 @@ public class HelloController {
 	@Autowired
 	FanMapper fanMapper;
 
+	@Resource
+	Fan18Service fan18Service;
+
 	@RequestMapping("/")
 	String home() {
 		helloService.home();
@@ -53,13 +58,16 @@ public class HelloController {
 
 	@RequestMapping("/getFans")
 	public List<String> getFans() {
-		List<Fan> list = helloService.getFans();
+		List<Fan> list = fanService.getFans();
+		List<Fan> listNew = fan18Service.filterFans(list, new FanCityAndSexPredicate());
 		List<String> list2 = new ArrayList<String>();
-		if (list.size() > 0 || list != null) {
-			for (Fan f : list) {
+		if (listNew.size() > 0 || listNew != null) {
+			for (Fan f : listNew) {
 				list2.add(f.toString());
 			}
 		}
+		System.out.println(list.size());
+		System.out.println(listNew.size());
 		return list2;
 	}
 }

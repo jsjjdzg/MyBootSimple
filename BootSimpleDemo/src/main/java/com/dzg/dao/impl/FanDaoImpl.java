@@ -21,7 +21,7 @@ public class FanDaoImpl extends JdbcGenericDao implements FanDao {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Fan> getFans() throws Throwable {
-		String sql = "SELECT * FROM weixin_fan f WHERE 1=1 ";
+		String sql = "SELECT id,city,sex,province,subscribe_time FROM weixin_fan f WHERE 1=1 ";
 		List<Param> params = new ArrayList<Param>();
 		Param p1 = new Param();
 		
@@ -33,10 +33,10 @@ public class FanDaoImpl extends JdbcGenericDao implements FanDao {
 		
 		Map<String,String> sorter = new HashMap<String,String>();
 		sorter.put("subscribe_time", "");//这里排序 写排序的字段
-		sql = SQLHelper.buildSql(sql, 1, 10, params, sorter, "f");
+		sql = SQLHelper.buildSql(sql, 1, 100, params, sorter, "f");
 		Map<String,Object> paramMap = SQLHelper.getParam(params);
 		System.err.println(sql);
-		return this.list(Fan.class, sql, paramMap);
+		return this.list(Fan.class, sql,paramMap);
 	}
 
 	
