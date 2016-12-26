@@ -7,7 +7,8 @@ import redis.clients.jedis.JedisPoolConfig;
 public class RedisSimple {
 
 	//Redis服务器IP
-    private static String ADDR = "localhost";
+    //private static String ADDR = "localhost";
+	private static String ADDR = "192.168.2.140";
  
     //Redis的端口号
     private static int PORT = 6379;

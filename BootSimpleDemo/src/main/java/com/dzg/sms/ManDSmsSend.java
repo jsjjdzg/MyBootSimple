@@ -66,7 +66,7 @@ public class ManDSmsSend{
 	}
 	
 	public static void main(String[] args) {
-		SendSms("17186387930","今天干嘛啊？");
-		//SendSms("15665192553","今天干嘛啊？");
+		//SendSms("17186387930","今天干嘛啊？");
+		SendSms("15665192553","今天干嘛啊？");
 	}
 }

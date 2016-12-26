@@ -36,7 +36,7 @@ public class BootSimpleApplication {
 		config.addDataSourceProperty("cachePrepStmts", "true");
 		config.addDataSourceProperty("prepStmtCacheSize", "250");
 		config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
-
+		logger.info("SQL connect OK");
 		return new HikariDataSource(config);
 	}
 

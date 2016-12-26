@@ -23,8 +23,8 @@ public class Client {
 //	private String serviceURL = "http://sdk105.entinfo.cn:8060/webservice.asmx";
 	
 //	private String serviceURL = "http://report.zucp.net:8060/reportservice.asmx";
-	private String serviceURL = "http://sdk2.entinfo.cn:8061/webservice.asmx";
-//	private String serviceURL = "http://119.254.88.62:8061/webservice.asmx";//正式环境域名无法访问
+//	private String serviceURL = "http://sdk2.entinfo.cn:8061/webservice.asmx";
+	private String serviceURL = "http://119.254.88.62:8061/webservice.asmx";//正式环境域名无法访问
 	private String sn = "";// 序列号
 	private String password = "";
 	private String pwd = "";// 密码
